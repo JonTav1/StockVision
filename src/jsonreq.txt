@@ -1,0 +1,52 @@
+router.GET("/stocks", sendStocks)
+
+http://localhost:8080/stocks?username=jonathan995806
+
+router.GET("/stocks/aisummary", aiSummary)
+
+http://localhost:8080/stocks/aisummary?ticker=AMC
+
+router.POST("/stocks/createstock", createStocks)
+{
+    "ticker": "AMC",
+    "amount": 100,
+    "averageprice": 100,
+    "username": "jonathan995806"
+}
+router.POST("/login", signIn)
+{
+    "username": "jonathan995806",
+    "password": "hi"
+}
+router.PATCH("/user/changeusername", changeUsername)
+{
+	"username": "jonathan995806",
+	"newusername": "jt995806",
+    "password": "hi"
+}
+router.PATCH("user/changepassword", changePassword)
+{
+	"username": "jonathan995806",
+	"password": "hi",
+    "newpassword": "jt995806"
+}
+router.PATCH("/stocks/addstock", buyStock)
+{
+    "ticker": "AMC",
+    "amount": 100,
+    "averageprice": 100,
+    "username": "jonathan995806"
+}
+router.PATCH("/stocks/removestock", sellStock)
+{
+    "ticker": "AMC",
+    "amount": 100,
+    "averageprice": 100,
+    "username": "jonathan995806"
+}
+router.DELETE("/stocks/deletestock", deleteStock)
+
+{
+    "username": "jonathan995806",
+    "ticker": "AMC"
+}
