@@ -15,7 +15,7 @@ function DeleteStock({username}) {
             ticker: ticker
         };
        console.log(data)
-        fetch('http://localhost:8080/stocks/deletestock', {
+        fetch('https://pqlk51hogh.execute-api.us-east-2.amazonaws.com/stocks/deletestock', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'

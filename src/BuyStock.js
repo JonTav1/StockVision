@@ -18,7 +18,7 @@ function BuyStock({username}) {
         };
         console.log(data)
         
-        fetch("http://localhost:8080/stocks/addstock", {
+        fetch("https://pqlk51hogh.execute-api.us-east-2.amazonaws.com/stocks/addstock", {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

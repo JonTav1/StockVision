@@ -9,7 +9,7 @@ function AiSummary() {
     const handleSubmit = (e) => {
         e.preventDefault();
     
-        const url = `http://localhost:8080/stocks/aisummary?ticker=${ticker}&choice=${choice}`;
+        const url = `https://pqlk51hogh.execute-api.us-east-2.amazonaws.com/stocks/aisummary/${ticker}/${choice}`;
         fetch(url, {
             method: 'GET',
             headers: {

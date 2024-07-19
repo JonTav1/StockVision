@@ -18,7 +18,7 @@ function SellStock({username}) {
         };
         console.log(data)
         
-        fetch("http://localhost:8080/stocks/removestock", {
+        fetch("https://pqlk51hogh.execute-api.us-east-2.amazonaws.com/stocks/removestock", {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

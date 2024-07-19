@@ -7,7 +7,7 @@ function CheckStocks({ username }) {
     const handleSubmit = (e) => {
         e.preventDefault();
     
-        const url = `http://localhost:8080/stocks?username=${username}`;
+        const url = `https://pqlk51hogh.execute-api.us-east-2.amazonaws.com/stocks/${username}`;
         fetch(url, {
             method: 'GET',
             headers: {
@@ -23,11 +23,12 @@ function CheckStocks({ username }) {
         .then(data => {
             console.log('API response data:', data);
             
-            if(data.stocks.length === 0){
+            
+            if(data?.length === 0){
                 setResponse('You currently have no stocks.')
             }
             else{
-            setStocks(data.stocks); // Update stocks state correctly
+            setStocks(data); // Update stocks state correctly
             setResponse('Stocks fetched successfully.');
             }
         })
@@ -49,9 +50,9 @@ function CheckStocks({ username }) {
             <ul>
                 {stocks.map((stock, index) => (
                     <li key={index}>
-                        <strong>Ticker:</strong> {stock.Ticker}<br />
-                        <strong>Amount:</strong> {stock.Amount}<br />
-                        <strong>Average Price:</strong> {stock.AveragePrice}<br />
+                        <strong>Ticker:</strong> {stock.ticker}<br />
+                        <strong>Amount:</strong> {stock.amount}<br />
+                        <strong>Average Price:</strong> {stock.averagePrice}<br />
                     </li>
                 ))}
             </ul>

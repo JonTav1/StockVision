@@ -18,7 +18,7 @@ function NewStock({username}) {
         };
         console.log(data)
         
-        fetch("http://localhost:8080/stocks/createstock", {
+        fetch("https://pqlk51hogh.execute-api.us-east-2.amazonaws.com/stocks/createstock", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

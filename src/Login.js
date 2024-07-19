@@ -12,7 +12,7 @@ const handleSubmit = (e) => {
             password: password
         };
 
-        fetch('http://localhost:8080/login', {
+        fetch('https://pqlk51hogh.execute-api.us-east-2.amazonaws.com/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

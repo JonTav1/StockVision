@@ -19,7 +19,7 @@ function CreateUser() {
         };
         console.log(data)
         
-        fetch("http://localhost:8080/createuser", {
+        fetch("https://pqlk51hogh.execute-api.us-east-2.amazonaws.com/createuser", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
