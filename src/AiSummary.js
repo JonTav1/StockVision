@@ -8,7 +8,7 @@ function AiSummary() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-    
+        
         const url = `https://pqlk51hogh.execute-api.us-east-2.amazonaws.com/stocks/aisummary/${ticker}/${choice}`;
         fetch(url, {
             method: 'GET',
@@ -32,9 +32,9 @@ function AiSummary() {
     };
 
     return (
-        <div>
+        <div className = "aisummary">
             <div>
-            <form onSubmit = {handleSubmit}>
+            <form>
             <label>
                 What is the Ticker symbol?
             <input 
@@ -43,15 +43,18 @@ function AiSummary() {
                 onChange = {(e) => setTicker(e.target.value)}
                 />
             </label>
-            </form>
-            </div>
+       
+            
             <div>
                 Is this a cryptocurrency?
-                <button onClick = {(e) => setChoice("crypto")}>Yes</button>
-                <button onClick = {(e) => setChoice("stock")}>No</button>
+                <button type = "button" onClick = {(e) => setChoice("crypto")}>Yes</button>
+                <button type = "button" onClick = {(e) => setChoice("stock")}>No</button>
+                
             </div>
-            
-         
+            <br></br>
+            <button onClick = {handleSubmit}>Submit Information</button>
+            </form>
+            </div>
             <p>{response}</p>
         </div>
         

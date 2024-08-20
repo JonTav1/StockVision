@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 
 
-function CreateUser() {
+function CreateUser({loginSuccess}) {
     const [response, setResponse] = useState('');  
     const [firstname, setFirstName] = useState('');
     const [lastname, setLastName] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
     const handleSubmit = (e) => {
         e.preventDefault();
         
@@ -32,15 +33,21 @@ function CreateUser() {
                 }
                 return response.json();
             })
-            .then(data => setResponse(data.message))
-            
+            .then(data => 
+                setResponse(data.message),
+                loginSuccess(username)
+            )
+        
             .catch(error => {
                 console.error('Error:', error);
                 setResponse('Username already exists. Please choose a different one.');
             });
+            
+      
     };
     return (
-        <div>
+        <div className = "createuser">
+            <h1>Create User</h1>
         <form onSubmit={handleSubmit}>
               <label>
                 First Name

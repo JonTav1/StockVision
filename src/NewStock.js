@@ -40,6 +40,7 @@ function NewStock({username}) {
     };
     return (
         <div>
+            
         <form onSubmit={handleSubmit}>
               <label>
                 Ticker

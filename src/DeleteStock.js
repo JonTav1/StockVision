@@ -4,16 +4,17 @@ import React, {useState} from 'react';
 function DeleteStock({username}) {
     const [response, setResponse] = useState('');  
     const [ticker, setTicker] = useState('');
-   
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(username)
+        
 
         const data = { 
             username: username,
             ticker: ticker
         };
+
        console.log(data)
         fetch('https://pqlk51hogh.execute-api.us-east-2.amazonaws.com/stocks/deletestock', {
             method: 'DELETE',
@@ -37,7 +38,7 @@ function DeleteStock({username}) {
             });
     };
     return (
-        <div>
+        <div className = "deletestock">
         <form onSubmit={handleSubmit}>
               <label>
                 Ticker
@@ -47,7 +48,7 @@ function DeleteStock({username}) {
                 onChange = {(e) => setTicker(e.target.value)}
                 />
               </label>
-                <button type="submit">Delete Stock</button>
+                <button type="submit">Sell all stock</button>
             </form>
             <h1>{response}</h1>
         </div>

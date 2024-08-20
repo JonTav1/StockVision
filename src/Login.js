@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import {Link} from 'react-router-dom'
 function Login({loginSuccess}) {
 const [response, setResponse] = useState('');  
 const [password, setPassword] = useState('');
@@ -34,11 +34,12 @@ const handleSubmit = (e) => {
                 console.error('Error:', error);
                 setResponse('Incorrect username/password, or account does not exist, try again.');
             });
-        
+            
     };
 
     return (
-        <div>
+        <div className = "login">
+            <h1>Login</h1>
             <form onSubmit={handleSubmit}>
               <label>
                 Username:
@@ -55,8 +56,12 @@ const handleSubmit = (e) => {
                 />
               </label>
                 <button type="submit">Sign in</button>
+                <br></br>
+               
             </form>
-            
+            <Link to="/createuser"> 
+            <button>Create User</button>
+            </Link>
             <p>{response}</p>
         </div>
     );

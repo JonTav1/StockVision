@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import {Link} from 'react-router-dom'
 
 function BuyStock({username}) {
     const [response, setResponse] = useState('');  
@@ -39,7 +39,7 @@ function BuyStock({username}) {
             });
     };
     return (
-        <div>
+        <div className = "buystock">
         <form onSubmit={handleSubmit}>
               <label>
                 Ticker
@@ -61,8 +61,11 @@ function BuyStock({username}) {
                 onChange = {(e) => setBuyPrice(e.target.value)}
                 />
               </label>
-                <button type="submit">Purchase Stock</button>
+                <button type="submit">Buy Stock</button>
             </form>
+            <Link to="/newstock">
+                <button>If you're adding a new stock, click here.</button>
+            </Link>
             <h1>{response}</h1>
         </div>
     )

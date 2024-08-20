@@ -1,7 +1,7 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
 
-class Stock extends React.Component {
+class StockChart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -53,7 +53,7 @@ class Stock extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className= "stock-chart">
         <h1>Stock Market</h1>
         <form onSubmit={this.handleSubmit}>
           <label>
@@ -67,7 +67,7 @@ class Stock extends React.Component {
           </label>
           <button type="submit">Submit</button>
         </form>
-        <Plot
+        <Plot className = "react-plotly-graph"
           data={[
             {
               x: this.state.stockChartXValues,
@@ -84,4 +84,4 @@ class Stock extends React.Component {
   }
 }
 
-export default Stock;
+export default StockChart;

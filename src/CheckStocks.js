@@ -39,7 +39,7 @@ function CheckStocks({ username }) {
     };
 
     return (
-        <div>
+        <div className = "checkstocks">
             <div>
             <i>
                 Press the Button below to check your stock portfolio

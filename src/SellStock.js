@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
-
+import {Link} from 'react-router-dom'
 
 function SellStock({username}) {
     const [response, setResponse] = useState('');  
     const [ticker, setTicker] = useState('');
     const [amount, setAmount] = useState('');
-    const [buyprice, setBuyPrice] = useState('');
+    const [sellprice, setSellPrice] = useState('');
+
     const handleSubmit = (e) => {
         e.preventDefault();
         
@@ -14,7 +15,7 @@ function SellStock({username}) {
             username: username,
             ticker: ticker,
             amount: parseInt(amount),
-            averageprice: parseInt(buyprice)
+            averageprice: parseInt(sellprice)
         };
         console.log(data)
         
@@ -54,15 +55,18 @@ function SellStock({username}) {
                 value = {amount}
                 onChange = {(e) => setAmount(e.target.value)}
                 />
-                Buy Price
+                Sell Price
                 <input
                 type = "text"
-                value = {buyprice}
-                onChange = {(e) => setBuyPrice(e.target.value)}
+                value = {sellprice}
+                onChange = {(e) => setSellPrice(e.target.value)}
                 />
               </label>
                 <button type="submit">Sell Stock</button>
             </form>
+            <Link to="/deletestock">
+                <button>Sell all of your shares instead?</button>
+            </Link>
             <h1>{response}</h1>
         </div>
     )
