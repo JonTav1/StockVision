@@ -9,7 +9,9 @@ Users can also receive an ai-generated sentiment on the stock based on price dat
 StockVision also provides basic charting abilities, so you can visualize your stocks.
 
 Technologies: Go Backend, React.js Frontend. Initially the application was deployed locally with a MySQL database, but eventually ported to AWS.
-AWS Amplify was used for the frontend, while I used API Gateway pointing to different Lambda function endpoints.
+AWS Amplify was used for the frontend, while I used API Gateway pointing to different Lambda function endpoints. 
+DynamoDB was used to store user credentials and stock portfolio data.
+
 
 
 
